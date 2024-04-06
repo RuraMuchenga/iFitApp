@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "676911405089",
+    "project_id": "signin-example-b44f4",
+    "storage_bucket": "signin-example-b44f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676911405089:android:1597229510207f32b62b60",
+        "android_client_info": {
+          "package_name": "com.example.firebase_signin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApn3wuhqkB1SYxAWKJNhozi4ilA90Bn1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676911405089:android:68ad44d27e9a2f6cb62b60",
+        "android_client_info": {
+          "package_name": "com.example.project_ifit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApn3wuhqkB1SYxAWKJNhozi4ilA90Bn1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
