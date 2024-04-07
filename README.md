@@ -1,2 +1,2 @@
 # iFitApp
-New innovative fitness app for everyday gym goers
+New innovative fitness app for everyday gym goers!
