@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
 import 'package:firebase_signin/screens/equipment_availability_page.dart';
+import 'package:firebase_signin/screens/progress.dart';
+
 import 'package:firebase_signin/screens/membership.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -97,7 +99,12 @@ class DashboardScreen extends StatelessWidget {
                 icon: Icons.timeline,
                 title: "Progress Summary",
                 onTap: () {
-                  // Handle onTap action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProgressPage(email: email),
+                    ),
+                  );
                 },
               ),
               SizedBox(height: 20),

@@ -26,7 +26,7 @@ class Membership extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
-          "Dashboard",
+          "Gym Memberships",
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
