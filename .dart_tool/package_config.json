@@ -134,6 +134,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/anush/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///C:/Users/anush/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
@@ -266,7 +272,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2024-04-08T08:28:08.852742Z",
+  "generated": "2024-04-10T11:07:17.153680Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }

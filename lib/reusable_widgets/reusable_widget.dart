@@ -44,6 +44,34 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
   );
 }
 
+Widget buildButton({
+  required String text,
+  required VoidCallback onPressed,
+  required Color backgroundColor,
+  Color? textColor,
+}) {
+  return SizedBox(
+    width: double.infinity,
+    child: ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: backgroundColor,
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+        ),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: textColor ?? Colors.white,
+          fontSize: 18,
+        ),
+      ),
+    ),
+  );
+}
+
 Container firebaseUIButton(BuildContext context, String title, Function onTap) {
   return Container(
     width: MediaQuery.of(context).size.width,
@@ -75,6 +103,7 @@ Container firebaseUIButton(BuildContext context, String title, Function onTap) {
 Widget buildCard({
   required IconData icon,
   required String title,
+  String? subtitle,
   required VoidCallback onTap,
 }) {
   return GestureDetector(
@@ -105,6 +134,14 @@ Widget buildCard({
                   color: Colors.black,
                 ),
               ),
+              if (subtitle != null)
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.black54,
+                  ),
+                ),
             ],
           ),
         ],

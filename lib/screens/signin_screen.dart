@@ -56,13 +56,13 @@ class _SignInScreenState extends State<SignInScreen> {
                   controller: _passwordTextController,
                 ),
                 const SizedBox(height: 20),
-                _buildButton(
+                buildButton(
                   text: 'Sign In',
                   onPressed: _signIn,
                   backgroundColor: Colors.blueAccent,
                 ),
                 const SizedBox(height: 10),
-                _buildButton(
+                buildButton(
                   text: 'Sign Up',
                   onPressed: _navigateToSignUp,
                   backgroundColor: Colors.white,
@@ -102,34 +102,6 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  Widget _buildButton({
-    required String text,
-    required VoidCallback onPressed,
-    required Color backgroundColor,
-    Color? textColor,
-  }) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          padding: const EdgeInsets.symmetric(vertical: 15),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor ?? Colors.white,
-            fontSize: 18,
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildForgotPassword() {
     return TextButton(
       onPressed: _navigateToResetPassword,
@@ -143,14 +115,15 @@ class _SignInScreenState extends State<SignInScreen> {
   void _signIn() {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(
-          email: _emailTextController.text,
-          password: _passwordTextController.text,
-        )
+      email: _emailTextController.text,
+      password: _passwordTextController.text,
+    )
         .then((value) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => DashboardScreen(username: _emailTextController.text),
+          builder: (context) =>
+              DashboardScreen(email: _emailTextController.text),
         ),
       );
     }).onError((error, stackTrace) {

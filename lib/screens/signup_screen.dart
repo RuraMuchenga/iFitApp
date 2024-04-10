@@ -2,11 +2,11 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
-import 'package:firebase_signin/screens/dashboard_screen.dart';
 import 'package:firebase_signin/screens/membership.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -168,11 +168,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     if (kDebugMode) {
                       print("Created New Account");
                     }
+                    String formattedDate =
+                        DateFormat('yyyy-MM-dd').format(selectedDate);
                     FirebaseFirestore.instance
                         .collection('Users')
                         .doc(_emailTextController.text)
                         .set({
-                      'dob': selectedDate,
+                      'dob': formattedDate,
                       'first_name': _firstTextController.text,
                       'last_name': _lastTextController.text,
                       'workout_plan': [],
@@ -182,7 +184,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            Membership(username: _firstTextController.text),
+                            Membership(email: _emailTextController.text),
                       ),
                     ).onError((error, stackTrace) {
                       if (kDebugMode) {
