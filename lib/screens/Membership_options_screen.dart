@@ -89,7 +89,7 @@ class _MembershipOptionsScreenState extends State<MembershipOptionsScreen> {
                       );
                     },
                   )
-                : Center(
+                : const Center(
                     child: CircularProgressIndicator(),
                   ),
           )

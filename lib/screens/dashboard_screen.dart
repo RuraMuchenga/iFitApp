@@ -2,11 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
 import 'package:firebase_signin/screens/equipment_availability_page.dart';
+import 'package:firebase_signin/screens/membership.dart';
 
 class DashboardScreen extends StatelessWidget {
   final String email;
 
   const DashboardScreen({Key? key, required this.email}) : super(key: key);
+
+  Future<String> getGym(String email) async {
+    var gymName = '';
+    CollectionReference users = FirebaseFirestore.instance.collection('Users');
+    var doc = await users.doc(email).get();
+    if (doc.exists) {
+      Map<String, dynamic> map = doc.data() as Map<String, dynamic>;
+      if (map.containsKey('membership')) {
+        // Replace field by the field you want to check.
+        gymName = map['membership']['gym'];
+      }
+    }
+    return gymName;
+  }
+
+  void checkString(BuildContext context, Future<String> futureValue) async {
+    String value = await futureValue;
+    if (value.isEmpty) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Membership(email: email),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => EquipmentAvailabilityPage(gym: value),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,12 +105,9 @@ class DashboardScreen extends StatelessWidget {
                 icon: Icons.list_alt_outlined,
                 title: "Gym Equipment Availability",
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => EquipmentAvailabilityPage(),
-                    ),
-                  );
+                  var gymName = getGym(email);
+                  // Check if the string is empty
+                  checkString(context, gymName);
                 },
               ),
               SizedBox(height: 20),
