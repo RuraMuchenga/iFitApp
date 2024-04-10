@@ -1,10 +1,10 @@
 import 'package:firebase_signin/screens/equipment_availability_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
 //import 'package:your_project_name_here/equipment_availability_page.dart'; // Import your equipment availability page file
 
 class DashboardScreen extends StatelessWidget {
   final String username;
-
   const DashboardScreen({Key? key, required this.username}) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            _buildCard(
+            buildCard(
               icon: Icons.fitness_center,
               title: "Custom Workout Plan",
               onTap: () {
@@ -44,7 +44,7 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-            _buildCard(
+            buildCard(
               icon: Icons.timeline,
               title: "Progress Summary",
               onTap: () {
@@ -52,8 +52,8 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-            _buildCard(
-              icon: Icons.sports_bar,
+            buildCard(
+              icon: Icons.list_alt_outlined,
               title: "Gym Equipment Availability",
               onTap: () {
                 Navigator.push(
@@ -64,7 +64,7 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-            _buildCard(
+            buildCard(
               icon: Icons.chat,
               title: "Chat Room",
               onTap: () {
@@ -76,41 +76,4 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
   }
-
-  Widget _buildCard({
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.blue.shade200,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          children: <Widget>[
-            Icon(
-              icon,
-              size: 40,
-              color: Colors.blue.shade800,
-            ),
-            const SizedBox(width: 20),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
-
-

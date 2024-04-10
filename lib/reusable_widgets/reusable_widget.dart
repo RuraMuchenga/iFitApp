@@ -18,17 +18,22 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
     cursorColor: Colors.blue[200], // Adjusted cursor color to match the theme
-    style: TextStyle(color: Colors.black87.withOpacity(0.9)), // Adjusted text color for better contrast
+    style: TextStyle(
+        color: Colors.black87
+            .withOpacity(0.9)), // Adjusted text color for better contrast
     decoration: InputDecoration(
       prefixIcon: Icon(
         icon,
         color: Colors.blue[200], // Adjusted icon color to match the theme
       ),
       labelText: text,
-      labelStyle: TextStyle(color: Colors.black87.withOpacity(0.9)), // Adjusted label text color for better contrast
+      labelStyle: TextStyle(
+          color: Colors.black87.withOpacity(
+              0.9)), // Adjusted label text color for better contrast
       filled: true,
       floatingLabelBehavior: FloatingLabelBehavior.never,
-      fillColor: Colors.white.withOpacity(0.7), // Adjusted fill color for text field background
+      fillColor: Colors.white
+          .withOpacity(0.7), // Adjusted fill color for text field background
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30.0),
           borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
@@ -67,3 +72,43 @@ Container firebaseUIButton(BuildContext context, String title, Function onTap) {
   );
 }
 
+Widget buildCard({
+  required IconData icon,
+  required String title,
+  required VoidCallback onTap,
+}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.blue.shade200,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            icon,
+            size: 40,
+            color: Colors.blue.shade800,
+          ),
+          const SizedBox(width: 20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
