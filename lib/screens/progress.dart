@@ -10,7 +10,7 @@ class ProgressPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Progress'),
+        title: const Text('Your Progress'),
         centerTitle: true,
       ),
       body: Padding(
@@ -38,14 +38,14 @@ class ProgressPage extends StatelessWidget {
                       children: [
                         Text(
                           'Date: $date',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         ListView.builder(
                           shrinkWrap: true,
-                          physics: ClampingScrollPhysics(),
+                          physics: const ClampingScrollPhysics(),
                           itemCount: exercises.length,
                           itemBuilder: (context, index) {
                             var exercise = exercises[index];
@@ -64,18 +64,18 @@ class ProgressPage extends StatelessWidget {
                             );
                           },
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                       ],
                     );
                   },
                 );
               } else {
-                return Center(
+                return const Center(
                   child: Text('No progress data available'),
                 );
               }
             }
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           },

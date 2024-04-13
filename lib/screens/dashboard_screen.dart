@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
 import 'package:firebase_signin/screens/equipment_availability_page.dart';
 import 'package:firebase_signin/screens/progress.dart';
+import 'package:firebase_signin/screens/workout_plan.dart';
 
 import 'package:firebase_signin/screens/membership.dart';
 
@@ -18,7 +19,6 @@ class DashboardScreen extends StatelessWidget {
     if (doc.exists) {
       Map<String, dynamic> map = doc.data() as Map<String, dynamic>;
       if (map.containsKey('membership')) {
-        // Replace field by the field you want to check.
         gymName = map['membership']['gym'];
       }
     }
@@ -50,7 +50,7 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Dashboard",
           style: TextStyle(
             fontSize: 28,
@@ -70,14 +70,14 @@ class DashboardScreen extends StatelessWidget {
                 future: getUserField(email, 'first_name'),
                 builder: (context, AsyncSnapshot<dynamic> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   } else if (snapshot.hasError) {
                     return Text('Error: ${snapshot.error}');
                   } else {
                     String username = snapshot.data.toString();
                     return Text(
                       "Welcome, $username!",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -86,15 +86,20 @@ class DashboardScreen extends StatelessWidget {
                   }
                 },
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               buildCard(
                 icon: Icons.fitness_center,
                 title: "Custom Workout Plan",
                 onTap: () {
-                  // Handle onTap action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WorkoutPlanPage(email: email),
+                    ),
+                  );
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               buildCard(
                 icon: Icons.timeline,
                 title: "Progress Summary",
@@ -107,7 +112,7 @@ class DashboardScreen extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               buildCard(
                 icon: Icons.list_alt_outlined,
                 title: "Gym Equipment Availability",
@@ -117,13 +122,25 @@ class DashboardScreen extends StatelessWidget {
                   checkString(context, gymName);
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               buildCard(
                 icon: Icons.chat,
                 title: "Chat Room",
                 onTap: () {
                   // Handle onTap action
                 },
+              ),
+              const SizedBox(height: 20),
+              buildCard(
+                icon: Icons.add_circle_outline,
+                title: "Add workout Details",
+                onTap: () {},
+              ),
+              const SizedBox(height: 20),
+              buildCard(
+                icon: Icons.bluetooth,
+                title: "Go into Watch mode",
+                onTap: () {},
               ),
             ],
           ),

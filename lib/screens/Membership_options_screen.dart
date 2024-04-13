@@ -56,7 +56,7 @@ class _MembershipOptionsScreenState extends State<MembershipOptionsScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: _subOptions != null && _subOptions.isNotEmpty
+            child: _subOptions.isNotEmpty
                 ? ListView.builder(
                     itemCount: _subOptions.length,
                     itemBuilder: (context, index) {
