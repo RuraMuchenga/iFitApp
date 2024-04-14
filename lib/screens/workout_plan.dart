@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
+import 'package:firebase_signin/screens/generate_form.dart';
 
 class WorkoutPlanPage extends StatelessWidget {
   final String email;
@@ -22,7 +23,14 @@ class WorkoutPlanPage extends StatelessWidget {
             buildCard(
               icon: Icons.auto_awesome,
               title: "Generate New Plan",
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GenerateForm(email: email),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 20),
             Expanded(
@@ -42,7 +50,7 @@ class WorkoutPlanPage extends StatelessWidget {
                         itemCount: workoutPlan.length,
                         itemBuilder: (context, index) {
                           var exercise = workoutPlan[index];
-                          var name = exercise['exercise'];
+                          var name = exercise['name'];
                           var time = exercise['time'].toString();
                           var reps = exercise['reps'] == 0
                               ? ''
