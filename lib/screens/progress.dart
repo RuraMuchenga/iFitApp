@@ -26,13 +26,18 @@ class ProgressPage extends StatelessWidget {
               if (userData != null &&
                   userData is Map<String, dynamic> &&
                   userData.containsKey('progress')) {
-                var progress = userData['progress'][0];
-                print(progress);
+                var progress = userData['progress'];
+                if (progress.isEmpty) {
+                  return const Center(
+                    child: Text('No progress data available'),
+                  );
+                }
+                var firstProgress = progress[0];
                 return ListView.builder(
-                  itemCount: progress.length,
+                  itemCount: firstProgress.length,
                   itemBuilder: (context, index) {
-                    var date = progress.keys.toList()[index];
-                    var exercises = progress[date];
+                    var date = firstProgress.keys.toList()[index];
+                    var exercises = firstProgress[date];
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -52,11 +57,8 @@ class ProgressPage extends StatelessWidget {
                             var name = exercise['exercise'];
                             var time = exercise['time'].toString();
                             var reps = exercise['reps'] == 0
-                                ? ''
+                                ? 'Not Applicable'
                                 : exercise['reps'].toString();
-                            print(name);
-                            print(time);
-                            print(reps);
                             return ProgressTile(
                               name: name,
                               time: time,

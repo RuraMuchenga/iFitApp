@@ -4,8 +4,8 @@ import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
 import 'package:firebase_signin/screens/equipment_availability_page.dart';
 import 'package:firebase_signin/screens/progress.dart';
 import 'package:firebase_signin/screens/workout_plan.dart';
-
 import 'package:firebase_signin/screens/membership.dart';
+import 'package:firebase_signin/screens/GroupChatRoom.dart';
 
 class DashboardScreen extends StatelessWidget {
   final String email;
@@ -127,7 +127,13 @@ class DashboardScreen extends StatelessWidget {
                 icon: Icons.chat,
                 title: "Chat Room",
                 onTap: () {
-                  // Handle onTap action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Membership(email: email),
+                    ),
+                    //Edit above navigation to send correct args
+                  );
                 },
               ),
               const SizedBox(height: 20),
