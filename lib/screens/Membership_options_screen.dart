@@ -20,7 +20,7 @@ class MembershipOptionsScreen extends StatefulWidget {
 }
 
 class _MembershipOptionsScreenState extends State<MembershipOptionsScreen> {
-  late List<dynamic> _subOptions;
+  List<dynamic> _subOptions = [];
 
   @override
   void initState() {

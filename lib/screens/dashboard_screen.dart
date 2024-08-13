@@ -5,6 +5,7 @@ import 'package:firebase_signin/screens/equipment_availability_page.dart';
 import 'package:firebase_signin/screens/progress.dart';
 import 'package:firebase_signin/screens/workout_plan.dart';
 import 'package:firebase_signin/screens/membership.dart';
+import 'package:firebase_signin/screens/add_workout.dart';
 import 'package:firebase_signin/screens/GroupChatRoom.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -130,9 +131,11 @@ class DashboardScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Membership(email: email),
+                      builder: (context) => GroupChatRoom(
+                        chatRoomId: 'JjU7eCLofKEZVoODoBUT',
+                        chatRoomTitle: 'iFit Studio Chat Room',
+                      ),
                     ),
-                    //Edit above navigation to send correct args
                   );
                 },
               ),
@@ -140,14 +143,15 @@ class DashboardScreen extends StatelessWidget {
               buildCard(
                 icon: Icons.add_circle_outline,
                 title: "Add workout Details",
-                onTap: () {},
-              ),
-              const SizedBox(height: 20),
-              buildCard(
-                icon: Icons.bluetooth,
-                title: "Go into Watch mode",
-                onTap: () {},
-              ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NewForm(email: email),
+                    ),
+                  );
+                },
+              )
             ],
           ),
         ),

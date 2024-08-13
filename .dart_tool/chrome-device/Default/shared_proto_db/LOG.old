@@ -1,8 +1,14 @@
-2024/04/22-22:42:12.326 1574 Reusing MANIFEST C:\Users\anush\AppData\Local\Temp\flutter_tools.d22675a6\flutter_tools_chrome_device.1865429c\Default\shared_proto_db/MANIFEST-000001
-2024/04/22-22:42:12.327 1574 Recovering log #16
-2024/04/22-22:42:12.328 1574 Reusing old log C:\Users\anush\AppData\Local\Temp\flutter_tools.d22675a6\flutter_tools_chrome_device.1865429c\Default\shared_proto_db/000016.log 
-2024/04/22-22:42:12.329 1574 Delete type=0 #3
-2024/04/22-22:42:12.329 1574 Delete type=0 #4
-2024/04/22-22:42:12.329 1574 Delete type=0 #7
-2024/04/22-22:42:12.329 1574 Delete type=0 #10
-2024/04/22-22:42:12.329 1574 Delete type=0 #13
+2024/04/24-10:33:53.291 27d8 Reusing MANIFEST C:\Users\anush\AppData\Local\Temp\flutter_tools.fed56cd8\flutter_tools_chrome_device.aa6c3913\Default\shared_proto_db/MANIFEST-000001
+2024/04/24-10:33:53.292 27d8 Recovering log #23
+2024/04/24-10:33:53.293 27d8 Reusing old log C:\Users\anush\AppData\Local\Temp\flutter_tools.fed56cd8\flutter_tools_chrome_device.aa6c3913\Default\shared_proto_db/000023.log 
+2024/04/24-10:33:53.294 27d8 Delete type=0 #3
+2024/04/24-10:33:53.294 27d8 Delete type=0 #4
+2024/04/24-10:33:53.294 27d8 Delete type=0 #7
+2024/04/24-10:33:53.294 27d8 Delete type=2 #8
+2024/04/24-10:33:53.294 27d8 Delete type=0 #10
+2024/04/24-10:33:53.294 27d8 Delete type=2 #11
+2024/04/24-10:33:53.294 27d8 Delete type=0 #13
+2024/04/24-10:33:53.294 27d8 Delete type=2 #14
+2024/04/24-10:33:53.295 27d8 Delete type=0 #16
+2024/04/24-10:33:53.295 27d8 Delete type=2 #17
+2024/04/24-10:33:53.295 27d8 Delete type=0 #19

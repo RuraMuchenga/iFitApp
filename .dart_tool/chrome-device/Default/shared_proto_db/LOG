@@ -1,20 +1,14 @@
-2024/04/22-23:12:03.836 50bc Reusing MANIFEST C:\Users\anush\AppData\Local\Temp\flutter_tools.6580204d\flutter_tools_chrome_device.bc77a1d3\Default\shared_proto_db/MANIFEST-000001
-2024/04/22-23:12:03.837 50bc Recovering log #16
-2024/04/22-23:12:03.838 50bc Reusing old log C:\Users\anush\AppData\Local\Temp\flutter_tools.6580204d\flutter_tools_chrome_device.bc77a1d3\Default\shared_proto_db/000016.log 
-2024/04/22-23:12:03.839 50bc Delete type=0 #3
-2024/04/22-23:12:03.839 50bc Delete type=0 #4
-2024/04/22-23:12:03.839 50bc Delete type=0 #7
-2024/04/22-23:12:03.839 50bc Delete type=0 #10
-2024/04/22-23:12:03.839 50bc Delete type=0 #13
-2024/04/22-23:12:32.084 44 Level-0 table #20: started
-2024/04/22-23:12:32.095 44 Level-0 table #20: 137508 bytes OK
-2024/04/22-23:12:32.102 44 Delete type=0 #16
-2024/04/22-23:12:32.103 44 Compacting 4@0 + 1@1 files
-2024/04/22-23:12:32.121 44 Generated table #21@0: 797 keys, 59563 bytes
-2024/04/22-23:12:32.122 44 Compacted 4@0 + 1@1 files => 59563 bytes
-2024/04/22-23:12:32.124 44 compacted to: files[ 0 1 1 0 0 0 0 ]
-2024/04/22-23:12:32.126 44 Delete type=2 #8
-2024/04/22-23:12:32.126 44 Delete type=2 #11
-2024/04/22-23:12:32.126 44 Delete type=2 #14
-2024/04/22-23:12:32.127 44 Delete type=2 #17
-2024/04/22-23:12:32.127 44 Delete type=2 #20
+2024/04/26-09:19:51.412 505c Reusing MANIFEST C:\Users\anush\AppData\Local\Temp\flutter_tools.cd1047ab\flutter_tools_chrome_device.5427883f\Default\shared_proto_db/MANIFEST-000001
+2024/04/26-09:19:51.413 505c Recovering log #23
+2024/04/26-09:19:51.414 505c Reusing old log C:\Users\anush\AppData\Local\Temp\flutter_tools.cd1047ab\flutter_tools_chrome_device.5427883f\Default\shared_proto_db/000023.log 
+2024/04/26-09:19:51.415 505c Delete type=0 #3
+2024/04/26-09:19:51.415 505c Delete type=0 #4
+2024/04/26-09:19:51.416 505c Delete type=0 #7
+2024/04/26-09:19:51.416 505c Delete type=2 #8
+2024/04/26-09:19:51.416 505c Delete type=0 #10
+2024/04/26-09:19:51.416 505c Delete type=2 #11
+2024/04/26-09:19:51.416 505c Delete type=0 #13
+2024/04/26-09:19:51.416 505c Delete type=2 #14
+2024/04/26-09:19:51.416 505c Delete type=0 #16
+2024/04/26-09:19:51.417 505c Delete type=2 #17
+2024/04/26-09:19:51.417 505c Delete type=0 #19

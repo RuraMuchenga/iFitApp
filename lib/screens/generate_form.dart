@@ -243,7 +243,7 @@ class _GenerateFormState extends State<GenerateForm> {
                     //Add
                     var eq_chosen = {...exsData};
                     eq_chosen['difficulty'] = eq['difficulty'];
-                    eq_chosen['name'] = docName;
+                    eq_chosen['name'] = eq['name'];
                     print('Adding:');
                     print(eq_chosen);
                     print('Current list:');
